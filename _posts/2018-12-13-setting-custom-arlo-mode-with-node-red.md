@@ -14,9 +14,35 @@ to external services to automate my arming & disarming of arlo. I already had so
 that setting custom modes were not supported.
 
 I figured I wasn't the only one who was frustrated with Arlo, I started looking into the Arlo API itself. While not documented by Arlo, Roberto Gallea [had a great post](https://www.robertogallea.com/blog/netgear-arlo-api) documenting all the endpoints
-that I tried to access via NodeRed.
+for me to use via NodeRed. 
 
-## Sic bis quaerit pio effugit Andron reclusit
+A great way to explore this API is to use [Postman](https://www.getpostman.com/).
+
+## 1. Authenticate against Arlo API
+```
+	curl -H "Content-Type: application/json;charset=UTF-8" -d '{"email":"YOUR_EMAIL","password":"YOUR_PASSWORD"}' -X POST "https://arlo.netgear.com/hmsweb/login/v2"
+```
+Which should return a document similar to 
+```
+	{
+	    "data": {
+	        "userId": "YOUR_USER_ID",
+	        "email": "YOUR_EMAIL",
+	        "token": "YOUR_TOKEN",
+	        "paymentId": "YOUR_PAYMENT_ID",
+	        "authenticated": 1504597425,
+	        "accountStatus": "registered",
+	        "serialNumber": "YOUR_SERIAL_NUMBER",
+	        "countryCode": "IT",
+	        "tocUpdate": false,
+	        "policyUpdate": false,
+	        "validEmail": true,
+	        "arlo": true,
+	        "dateCreated": 1477059159622
+	    },
+	    "success": true
+	}
+```
 
 Barba auras circumfusaeque mentis postquam, summusque medio, rogat fuit. Mercede
 sed aestus: aer: nati venienti sed: adversos? Sanguine est eurus Aegides certet
