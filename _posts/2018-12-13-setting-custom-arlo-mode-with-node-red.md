@@ -8,6 +8,14 @@ title: Setting custom Arlo modes with NodeRed
 I purchased my Arlo security cameras knowing that I wanted to integrate them into my HomeAssistant/NodeRed installation. After getting them set up I installed the Arlo Alarm
 & Arlo Camera components, I was disappointed with the integration. The statuses would be unreliable at best and trying to run any kind of automations against them was a nightmare.
 
+
+With occupancy sensors already configured in my HomeAssistant [see Phil Hawthorn's post here](https://philhawthorne.com/making-home-assistants-presence-detection-not-so-binary/), I started looking 
+to external services to automate my arming & disarming of arlo. I already had some [IFTTT](https://ifttt.com) automations so I thought I would check it out first and was disappointed again to see
+that setting custom modes were not supported.
+
+I figured I wasn't the only one who was frustrated with Arlo, I started looking into the Arlo API itself. While not documented by Arlo, Roberto Gallea [had a great post](https://www.robertogallea.com/blog/netgear-arlo-api) documenting all the endpoints
+that I tried to access via NodeRed.
+
 ## Sic bis quaerit pio effugit Andron reclusit
 
 Barba auras circumfusaeque mentis postquam, summusque medio, rogat fuit. Mercede
