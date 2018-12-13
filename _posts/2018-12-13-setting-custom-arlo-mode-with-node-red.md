@@ -5,11 +5,8 @@ title: Setting custom Arlo modes with NodeRed
 
 # {{ page.title }}
 
-## Sperabam non
-
-Lorem markdownum intumuit eumque qui removit iussit, habet pariterque, noctes
-sic. An aequaverit temptatos Melaneus, illa caede cupido multum supplice
-coniunx; non durum dederat.
+I purchased my Arlo security cameras knowing that I wanted to integrate them into my HomeAssistant/NodeRed installation. After getting them set up I installed the Arlo Alarm
+& Arlo Camera components, I was disappointed with the integration. The statuses would be unreliable at best and trying to run any kind of automations against them was a nightmare.
 
 ## Sic bis quaerit pio effugit Andron reclusit
 
