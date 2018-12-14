@@ -26,14 +26,24 @@ body {
 	}
 
 	table {
-		tr {
-			&:nth-child(odd) {
-				background: #f6f8fa;
-			}
-			td {
-				border: 1px solid #dfe2e5;
+		thead {
+			tr {
+				th {
+					padding: 4px;
+				}
 			}
 		}
+		tbody {
+			tr {
+				&:nth-child(odd) {
+					background: #f6f8fa;
+				}
+				td {
+					border: 1px solid #dfe2e5;
+					padding: 4px;
+				}
+			}	
+		}		
 	}	
 
 	.post {
