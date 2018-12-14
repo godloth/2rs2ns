@@ -28,7 +28,7 @@ body {
 		}
 	}
 
-	pre.highlight {
+	pre.highlight, p>code {
 		background-color:#f6f8fa;
 		font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace;
 	    border-radius: 3px;
@@ -37,5 +37,4 @@ body {
 	    overflow: auto;
 	    padding: 16px;
 	}
-
 }
