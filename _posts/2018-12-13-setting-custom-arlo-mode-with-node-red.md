@@ -9,7 +9,7 @@ I purchased my Arlo security cameras knowing that I wanted to integrate them int
 
 With occupancy sensors already configured in my HomeAssistant [see Phil Hawthorn's post here](https://philhawthorne.com/making-home-assistants-presence-detection-not-so-binary/), I started looking 
 to external services to automate my arming & disarming of arlo. I already had some [IFTTT](https://ifttt.com) automations so I thought I would check it out first and was disappointed again to see
-that setting custom modes were not supported.
+that setting custom modes was not supported.
 
 I figured I wasn't the only one who was frustrated with Arlo, I started looking into the Arlo API itself. While not documented by Arlo, Roberto Gallea [had a great post](https://www.robertogallea.com/blog/netgear-arlo-api) documenting all the endpoints
 for me to use via NodeRed. 
