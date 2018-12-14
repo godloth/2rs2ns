@@ -23,7 +23,8 @@ A great way to explore this API is to use [Postman](https://www.getpostman.com/)
 curl -H "Content-Type: application/json;charset=UTF-8" -d '{"email":"YOUR_EMAIL","password":"YOUR_PASSWORD"}' -X POST "https://arlo.netgear.com/hmsweb/login/v2"
 ```
 Which should return a document similar to 
-```
+
+```json
 {
     "data": {
         "userId": "YOUR_USER_ID",
@@ -44,34 +45,81 @@ Which should return a document similar to
 }
 ```
 
-Barba auras circumfusaeque mentis postquam, summusque medio, rogat fuit. Mercede
-sed aestus: aer: nati venienti sed: adversos? Sanguine est eurus Aegides certet
-duorum.
 
-    var scareware_protocol = analog(code(-2), terminal.remote(slashdotTopology,
-            ergonomicsScrollEsports + mask, virtualization_adc(-3, gate,
-            pcmciaPhreaking)));
-    exif.ddr_software_primary += httpsProperty;
-    if (1 + memory(4, 1, ethernet)) {
-        jpeg.dpi = qbe_acl_and.windowFriend(blacklist_cycle);
-        office(frequency_market);
-        source_guid_bespoke += nanometerCss(megabit, file_pci_applet(1),
-                ofDefaultPeripheral.wimax.kindleComputerRte(upPcb, emoticon,
-                malware_column_solid));
-    } else {
-        moodleMotion = blobTagMedia;
-        newbie_card = static(mamp + 93, midi);
-        tigerSuperscalarHover(qwerty_mirror_newline + san_uddi, ipxMatrix);
-    }
-    cdmaFlopsGopher += parseStandaloneClock;
-    if (minicomputerDramLpi(kerning, server, non_hyperlink_web)) {
-        twain_animated += sample_table_unit(switch_desktop, wizard_printer_copy,
-                readerDdl);
-        upload = wiredPopParallel.sku(character, 58, documentThumbnail);
-        reimageWordart += 5 * graphicsBroadband + xmp;
-    } else {
-        bounceDriverDefinition.vrml(45 + manetBasicWeb);
-    }
+What we need in this response is the `token`
+
+After retrieving your token, you'll need to the the deviceId of your base station (or whatever other device) you'll want to change the mode on. You can do this by making the following request:
+```
+curl -H "Authorization: YOUR_TOKEN" -X GET "https://arlo.netgear.com/hmsweb/users/devices"
+```
+
+This request will return a response similar to the following
+
+```json
+{
+    "data": [
+        {
+            "userId": "AB12-2345-6787878",
+            "deviceId": "0123456789ABC",
+            "parentId": "CBA9876543210",
+            "uniqueId": "AB12-2345-6787878_48B5647F83E96",
+            "deviceType": "camera",
+            "deviceName": "Your camera name",
+            "lastModified": 1504596539327,
+            "xCloudId": "35CK-1005-210-4644171",
+            "lastImageUploaded": "true",
+            "userRole": "OWNER",
+            "displayOrder": 1,
+            "presignedLastImageUrl": "https://arlolastimage-z1.s3.amazonaws.com/......./....",
+            "presignedSnapshotUrl": "https://arlos3-prod-z1.s3.amazonaws.com/.../.....",
+            "presignedFullFrameSnapshotUrl": "https://arlos3-prod-z1.s3.amazonaws.com/..../.....",
+            "mediaObjectCount": 0,
+            "state": "provisioned",
+            "modelId": "VMC3030",
+            "interfaceVersion": "i000",
+            "interfaceSchemaVer": "2",
+            "owner": {
+                "firstName": "OwnerFirstName",
+                "lastName": "OwnerLastName",
+                "ownerId": "3ACD-458-4578956"
+            },
+            "properties": {
+                "modelId": "VMC3030",
+                "olsonTimeZone": "Europe/Amsterdam",
+                "hwVersion": "H7"
+            }
+        },        
+        {
+            "userId": "CD12-2345-6787878",
+            "deviceId": "0123456789CDE",
+            "uniqueId": "CD12-2345-6787878_48B5647F83E96",
+            "deviceType": "basestation",
+            "deviceName": "YourBaseStationName",
+            "lastModified": 1504596539327,
+            "xCloudId": "35CK-1005-210-4644171",
+            "userRole": "OWNER",
+            "displayOrder": 2,
+            "mediaObjectCount": 0,
+            "state": "provisioned",
+            "modelId": "VMB3010",
+            "interfaceVersion": "i001",
+            "interfaceSchemaVer": "2",
+            "owner": {
+                "firstName": "OwnerFirstName",
+                "lastName": "OwnerLastName",
+            "properties": {
+                "modelId": "VMB3010",
+                "olsonTimeZone": "Europe/Amsterdam",
+                "hwVersion": "VMB3010r2"
+            }
+        }
+    ],
+    "success": true
+}
+```    
+
+From this response you'll need `deviceId` and `xCloudId`
+
 
 ## Iuppiter ferrum in contingere lacerto ad per
 
