@@ -146,6 +146,7 @@ $TOKEN$ | The token you received in step 1.
 $XCLOUDID$ | The xCloudId for your device recieved in step 2.
 
 
+
 ```
 msg.payload = '{"from":"$FROM$","to":"$DEVICEID$","action":"set","resource":"modes","transId":"$TRANSACTIONID$","publishResponse":true,"properties": {"active":"$MODEID$"}}';
 msg.headers = {};
