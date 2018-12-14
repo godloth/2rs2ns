@@ -122,32 +122,48 @@ This request will return a response similar to the following
 From this response you'll need `deviceId` and `xCloudId`
 
 
-## Find the "modeId" of the mode you wish to set.
+## 3. Find the "modeId" of the mode you wish to set.
 You can find the modeId of the mode you wish to set by going to Arlo's website and logging in. Browse to your modes page and edit one of your custom modes. Look in the url and you'll see your modeId:
 <img src="https://i.imgur.com/b8ubLBN.jpg" class='img-fluid'>
 
-Imperium ira ergo illi atque vipereos invitusque instar urbis: ferat tamen
-ambrosiae quam? Sine liceat e flebant adhuc volatu, et sub. Caesis per aenae
-tamen vitreis nomine ferro natura et conscia procubuit pontum, consenuere parte
-*amittere poterat* fiuntque dent, paruit.
+## 4. Make request to change device mode.
 
-> Sagitta reditus, deum opus currusque locuta letiferam confusa, non canet
-> semine. Dixit adit. Care illa nec, sacri notatas abit, offensasque latus. Quem
-> trahit, frustra lacrimis [et amando tradit](http://www.per.org/harenam.aspx)
-> voce mille tiliae fluit sine?
+Using all the information we've gathered, we can now make a `POST` to Arlo's api, to change our mode with the following request:
+```
+curl -H "Content-Type: application/json;charset=UTF-8" -H "Authorization: YOUR_TOKEN" -H "xcloudid: DEVICE_XCLOUDID" -d "JSON_OBJECT" -X POST "https://arlo.netgear.com/users/devices/notify/DEVICE_ID"
+```
 
-## Voluisse et tigno superabat verba nisi a
+## 5. Implement in NodeRed
+You can use the `function` node and the `http request` node to make this call.
+First you will need to drop a function node in your flow and set the following payload variables replacing text in brackets `$$` with values for your request:
 
-Amantibus **illa**; nomen ut pelagi utinam clamoribus bonis et arcum lavere,
-procul, est meo inposuit furentem vimque. Diem cacumine, Aeacides est extimuit
-nate instrumenta excipit nunc cinctaeque sequente, et verso sub. Pater uterque
-terga mihi similis exhalantur formae [turpi](http://in.com/excutit.php),
-genetrix, per.
 
-Est illa luce adurat credens studiosius secures sit coepere, audiet. Cecidere ne
-pars causa, undis fecit subitus diversi sensum. Quae oris ipsas Xanthos.
+Variable | Value
+--- | ---
+$FROM$ | A random string. I used one to identify my home assistant instance
+$DEVICEID$ | The device id you wish to change modes on
+$TRANSACTIONID$ | A random string
+$MODEID$ | The modeID you wish to set your device to received in step 3. "mode0" for the default "disarmed" and "mode1" for the default "armed"
+$TOKEN$ | The token you received in step 1.
+$XCLOUDID$ | The xCloudId for your device recieved in step 2.
 
-Aeneas Iuno tot: insuperabile Clara, et primum Simois, et inminet scire. Debemur
-**uni facit** hunc quis Rhoetus oscula generosi aprica, **imis**. Labore Cadmo,
-non carmina ultra pectora nigro pectus diversa dura intus ore **vulnere** cepit,
-ore pependit maris nascitur.
+
+```
+msg.payload = '{"from":"$FROM$","to":"$DEVICEID$","action":"set","resource":"modes","transId":"$TRANSACTIONID$","publishResponse":true,"properties": {"active":"$MODEID$"}}';
+msg.headers = {};
+msg.headers['Content-Type'] = 'application/json';
+msg.headers['Authorization'] = '$TOKEN$';
+msg.headers['xcloudId'] = '$XCLOUDID$';
+return msg;
+```
+
+Next you will need to drop an `http request` node into your flow and enter the the url to the arlo service, filling in `$DEVICEID$` with your deviceid:
+```
+https://arlo.netgear.com/hmsweb/users/devices/notify/$DEVICEID$/
+```
+
+<img src="https://i.imgur.com/S6Iv03b.jpg" class='img-fluid'>
+
+## That's it.
+
+When this flow run, your Arlo device should change modes.
