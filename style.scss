@@ -5,11 +5,16 @@ body {
 
 	h1,h2,h3,h4,h5,h6 {
 		font-family: 'Montserrat', sans-serif;
+		margin-top:20px;
 	}
 
 	h1 {
 		border-bottom:1px solid #EEEEEE;
 		margin-bottom: 30px;
+	}
+
+	h2 {
+		margin-top: 50px;
 	}
 
 	.post {
