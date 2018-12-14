@@ -19,6 +19,9 @@ body {
 		color:#343a40;
 		&:hover {
 			color:#181C1F;
+		}
+		&.read-more {
+			text-decoration: underline;
 		}	
 	}	
 
