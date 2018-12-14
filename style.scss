@@ -24,6 +24,14 @@ body {
 			text-decoration: underline;
 		}	
 	}
+	p {
+		a {
+			color:#007bff;
+			&:hover {
+				color:#0056b3;
+			}
+		}
+	}
 
 	table {
 		thead {
