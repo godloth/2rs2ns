@@ -19,6 +19,7 @@ for me to use via NodeRed.
 A great way to explore this API is to use [Postman](https://www.getpostman.com/).
 
 ## 1. Authenticate against Arlo API
+You'll be able to authenticate to the Arlo website by making the following call:
 ```
 curl -H "Content-Type: application/json;charset=UTF-8" -d '{"email":"YOUR_EMAIL","password":"YOUR_PASSWORD"}' -X POST "https://arlo.netgear.com/hmsweb/login/v2"
 ```
@@ -45,9 +46,9 @@ Which should return a document similar to
 }
 ```
 
-
 What we need in this response is the `token`
 
+## 2. Retrieve DeviceId & xCloudId
 After retrieving your token, you'll need to the the deviceId of your base station (or whatever other device) you'll want to change the mode on. You can do this by making the following request:
 ```
 curl -H "Authorization: YOUR_TOKEN" -X GET "https://arlo.netgear.com/hmsweb/users/devices"
@@ -121,7 +122,9 @@ This request will return a response similar to the following
 From this response you'll need `deviceId` and `xCloudId`
 
 
-## Iuppiter ferrum in contingere lacerto ad per
+## Find the "modeId" of the mode you wish to set.
+You can find the modeId of the mode you wish to set by going to Arlo's website and logging in. Browse to your modes page and edit one of your custom modes. Look in the url and you'll see your modeId:
+![How to find modeId](https://i.imgur.com/b8ubLBN.jpg)
 
 Imperium ira ergo illi atque vipereos invitusque instar urbis: ferat tamen
 ambrosiae quam? Sine liceat e flebant adhuc volatu, et sub. Caesis per aenae
