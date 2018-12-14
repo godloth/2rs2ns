@@ -124,7 +124,7 @@ From this response you'll need `deviceId` and `xCloudId`
 
 ## Find the "modeId" of the mode you wish to set.
 You can find the modeId of the mode you wish to set by going to Arlo's website and logging in. Browse to your modes page and edit one of your custom modes. Look in the url and you'll see your modeId:
-![How to find modeId](https://i.imgur.com/b8ubLBN.jpg)
+![How to find modeId](https://i.imgur.com/b8ubLBN.jpg | width=100)
 
 Imperium ira ergo illi atque vipereos invitusque instar urbis: ferat tamen
 ambrosiae quam? Sine liceat e flebant adhuc volatu, et sub. Caesis per aenae
