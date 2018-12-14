@@ -128,7 +128,7 @@ You can find the modeId of the mode you wish to set by going to Arlo's website a
 
 Using all the information we've gathered, we can now make a `POST` to Arlo's api, to change our mode with the following request:
 ```
-curl -H "Content-Type: application/json;charset=UTF-8" -H "Authorization: YOUR_TOKEN" -H "xcloudid: DEVICE_XCLOUDID" -d "JSON_OBJECT" -X POST "https://arlo.netgear.com/users/devices/notify/DEVICE_ID"
+curl -H "Content-Type: application/json;charset=UTF-8" -H "Authorization: YOUR_TOKEN" -H "xcloudid: DEVICE_XCLOUDID" -d "JSON_OBJECT" -X POST "https://arlo.netgear.com/hmsweb/users/devices/notify/DEVICE_ID"
 ```
 
 ## 5. Implement in NodeRed
