@@ -117,6 +117,9 @@ body {
     	color: #FFF;
     	a {
     		color:#FFF;
+    		&:hover {
+    			color:#DDD;
+    		}
     	}
 	}
 	
