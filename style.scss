@@ -52,6 +52,22 @@ body {
 		}		
 	}
 
+	pre.highlight, p>code {
+		background-color:#f6f8fa;
+		font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace;
+	    border-radius: 3px;
+	    font-size: 85%;
+	    line-height: 1.45;
+	    overflow: auto;
+	    padding: 16px;
+	    margin-top:10px;
+	    margin-bottom:10px;
+	}
+	p>code {
+		padding:4px;
+	}
+
+	/* Navbar */
 	.navbar {
 		background-color: #1F1F1F!important;
 		padding: 5px 0px;
@@ -63,8 +79,8 @@ body {
 		}
 	}	
 
+	/* Main Content */
 	.main {
-		/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#eeeeee+0,ffffff+100 */
 		background: #eeeeee; /* Old browsers */
 		background: -moz-linear-gradient(top, #eeeeee 0%, #ffffff 20%); /* FF3.6-15 */
 		background: -webkit-linear-gradient(top, #eeeeee 0%,#ffffff 20%); /* Chrome10-25,Safari5.1-6 */
@@ -94,18 +110,14 @@ body {
 		}
 	}
 
-	pre.highlight, p>code {
-		background-color:#f6f8fa;
-		font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace;
-	    border-radius: 3px;
-	    font-size: 85%;
-	    line-height: 1.45;
-	    overflow: auto;
-	    padding: 16px;
-	    margin-top:10px;
-	    margin-bottom:10px;
+	/* Footer */
+	footer {
+		background-color: #333;
+    	padding: 20px;
+    	color: #FFF;
+    	a {
+    		color:#FFF;
+    	}
 	}
-	p>code {
-		padding:4px;
-	}
+	
 }
