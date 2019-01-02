@@ -2,6 +2,7 @@
 layout: post
 title: Setting custom Arlo modes with NodeRed
 tags: homeassistant arlo nodered smarthome
+image: camera.jpg
 ---
 
 I purchased my Arlo security cameras knowing that I wanted to integrate them into my HomeAssistant/NodeRed installation. After getting them set up I installed the Arlo Alarm

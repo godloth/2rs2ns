@@ -1,0 +1,81 @@
+/* Variables */
+/* Global */
+/* line 6, style.scss */
+body {
+  font-family: "Roboto", sans-serif;
+  font-weight: 300; }
+  /* line 10, style.scss */
+  body h1, body h2, body h3, body h4, body h5, body h6 {
+    font-family: "Montserrat", sans-serif; }
+  /* line 14, style.scss */
+  body a {
+    color: #343a40; }
+    /* line 16, style.scss */
+    body a:hover {
+      color: #181C1F; }
+    /* line 19, style.scss */
+    body a.read-more {
+      text-decoration: underline; }
+  /* line 24, style.scss */
+  body p a {
+    color: #007bff; }
+    /* line 26, style.scss */
+    body p a:hover {
+      color: #0056b3; }
+  /* line 35, style.scss */
+  body table thead tr th {
+    padding: 4px; }
+  /* line 42, style.scss */
+  body table tbody tr:nth-child(odd) {
+    background: #f6f8fa; }
+  /* line 45, style.scss */
+  body table tbody tr td {
+    border: 1px solid #dfe2e5;
+    padding: 4px; }
+  /* line 53, style.scss */
+  body .navbar {
+    background-color: #1F1F1F !important;
+    padding: 5px 0px; }
+    /* line 57, style.scss */
+    body .navbar .navbar-brand {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 30px; }
+  /* line 64, style.scss */
+  body .main {
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#eeeeee+0,ffffff+100 */
+    background: #eeeeee;
+    /* Old browsers */
+    background: -moz-linear-gradient(top, #eeeeee 0%, #ffffff 20%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, #eeeeee 0%, #ffffff 20%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, #eeeeee 0%, #ffffff 20%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eeeeee', endColorstr='#ffffff',GradientType=0 );
+    /* IE6-9 */ }
+    /* line 72, style.scss */
+    body .main .content {
+      position: relative;
+      background-color: #FFF;
+      margin-top: -60px;
+      padding: 30px; }
+      /* line 78, style.scss */
+      body .main .content .post h1 {
+        padding-bottom: 20px; }
+  /* line 91, style.scss */
+  body pre.highlight, body p > code {
+    background-color: #f6f8fa;
+    font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace;
+    border-radius: 3px;
+    font-size: 85%;
+    line-height: 1.45;
+    overflow: auto;
+    padding: 16px;
+    margin-top: 10px;
+    margin-bottom: 10px; }
+  /* line 102, style.scss */
+  body p > code {
+    padding: 4px; }
+
+/*# sourceMappingURL=style.css.map */

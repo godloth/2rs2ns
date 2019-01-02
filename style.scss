@@ -1,20 +1,16 @@
----
----
+/* Variables */
+$headings: 'Montserrat', sans-serif;
+$body: 'Roboto', sans-serif;
+
+/* Global */
 body {
-	font-family: 'Raleway', sans-serif;
+	font-family: $body;
+	font-weight: 300; //Light
 
 	h1,h2,h3,h4,h5,h6 {
-		font-family: 'Montserrat', sans-serif;
-		margin-top:20px;
+		font-family: $headings;
 	}
-	h1 {
-		border-bottom:1px solid #EEEEEE;
-		margin-bottom: 30px;
-	}
-
-	h2 {
-		margin-top: 50px;
-	}
+	
 	a {
 		color:#343a40;
 		&:hover {
@@ -52,16 +48,43 @@ body {
 				}
 			}	
 		}		
+	}
+
+	.navbar {
+		background-color: #1F1F1F!important;
+		padding: 5px 0px;
+
+		.navbar-brand {
+			font-family: 'Montserrat', sans-serif;
+			font-weight: 700; //Bold
+			font-size: 30px;
+		}
 	}	
 
-	.post {
-		padding-top:30px;
-		padding-bottom:30px;
-		.entry {
+	.main {
+		/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#eeeeee+0,ffffff+100 */
+		background: #eeeeee; /* Old browsers */
+		background: -moz-linear-gradient(top, #eeeeee 0%, #ffffff 20%); /* FF3.6-15 */
+		background: -webkit-linear-gradient(top, #eeeeee 0%,#ffffff 20%); /* Chrome10-25,Safari5.1-6 */
+		background: linear-gradient(to bottom, #eeeeee 0%,#ffffff 20%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eeeeee', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
 
-		}
-		.date {
+		.content {
+			position:relative;
+			background-color:#FFF;
+			margin-top:-60px;
+			padding:30px;
+			.post {
+				h1 {
+					padding-bottom:20px;
+				}
+				.entry {
 
+				}
+				.date {
+
+				}
+			}
 		}
 	}
 
