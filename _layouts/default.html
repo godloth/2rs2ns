@@ -4,7 +4,7 @@
 <body>
 	{% include navbar.html %}
 	
-	{% if page.image != "" %}
+	{% if page.image %}
 		<div class='hero-image'>
 			<img class='img-fluid' alt='' aria-hidden='true' src='{{ site.baseurl }}/images/{{ page.image }}'>
 		</div>
