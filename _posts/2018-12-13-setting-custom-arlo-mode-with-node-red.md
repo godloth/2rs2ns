@@ -5,6 +5,10 @@ tags: homeassistant arlo nodered smarthome
 image: camera.jpg
 ---
 
+## Update: 5/2019
+I am slowly migrated from an http based flow over to full integration with Arlo into homeassistant using [hass-aarlo](https://github.com/twrecked/hass-aarlo). This is a full websocket driving homeassistant integration and has been working pretty well with my system. The HTTP/Node-red solution below still works however moving forward, I think this integration will be a more elegant solution.
+
+## Intro
 I purchased my Arlo security cameras knowing that I wanted to integrate them into my HomeAssistant/NodeRed installation. After getting them set up I installed the Arlo Alarm
 & Arlo Camera components, I was disappointed with the integration. The statuses would be unreliable at best and trying to run any kind of automations against them was a nightmare.
 
